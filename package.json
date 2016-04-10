@@ -1,0 +1,29 @@
+{
+  "name": "scrumble",
+  "version": "1.0.0",
+  "description": "Node powered, team based, Scrum board",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeadcowDesign/scrumble.git"
+  },
+  "keywords": [
+    "Scrum",
+    "Node",
+    "Sockets",
+    "Agile"
+  ],
+  "author": "James Filby <jim@deadcowdesign.co.uk>",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/DeadcowDesign/scrumble/issues"
+  },
+  "homepage": "https://github.com/DeadcowDesign/scrumble",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
