@@ -1,8 +1,8 @@
-var chai = require("../../dist/node_modules/chai");
+var chai = require("../../node_modules/chai");
 var assert = chai.assert;
 var expect = chai.expect;
 
-var ticketStruct = require("../../dist/structs/ticketStruct");
+var ticketStruct = require("../../structs/ticketStruct");
 var ticket = new ticketStruct();
 
 describe("ticketStruct", function () {

@@ -2,11 +2,11 @@
  * Text for the swimlane struct object.
  * @type {[type]}
  */
-var chai = require("../../dist/node_modules/chai");
+var chai = require("../../node_modules/chai");
 var assert = chai.assert;
 var expect = chai.expect;
 
-var swimlaneStruct = require("../../dist/structs/swimlaneStruct");
+var swimlaneStruct = require("../../structs/swimlaneStruct");
 var swimlane = new swimlaneStruct();
 
 describe("swimlaneStruct", function () {
