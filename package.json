@@ -1,11 +1,11 @@
 {
   "name": "scrumble",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node powered, team based, Scrum board",
   "main": "app.js",
   "scripts": {
     "test": "mocha test --recursive",
-    "test-cov": "istanbul cover _mocha -- test --recursive"
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- test --recursive"
   },
   "repository": {
     "type": "git",
