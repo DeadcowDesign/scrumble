@@ -15,11 +15,11 @@ describe("swimlaneStruct", function () {
 		expect(swimlane).to.have.property("id").which.is.a("string").and.is.empty;
 	});
 
-	it("should have a title propert which should be an empty stringy", function () {
+	it("should have a title property which should be an empty string", function () {
 		expect(swimlane).to.have.property("title").which.is.a("string").and.is.empty;
 	});
 
-	it("should have a position propert which should be an empty stringy", function () {
+	it("should have a position property which should be an empty string ", function () {
 		expect(swimlane).to.have.property("position").which.is.a("string").and.is.empty;
 	});
 

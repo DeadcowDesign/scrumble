@@ -24,6 +24,7 @@
   "homepage": "https://github.com/DeadcowDesign/scrumble",
   "devDependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
     "mocha": "^2.4.5"
   }
 }

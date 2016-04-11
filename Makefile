@@ -1,3 +1,3 @@
 test:
-	@./node_modules/.bin/mocha -u tdd
+	mocha --recursive
 .PHONY: test
