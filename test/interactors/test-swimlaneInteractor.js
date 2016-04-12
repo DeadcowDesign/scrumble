@@ -22,7 +22,7 @@ describe("swimlaneInteractor", function () {
 	it("should remove a ticket from a swimlane", function () {
 		
 		var swimlane = new swimlane();
-		var id = randomGenerator();		swimlaneInteractor.addTicket(swimlane, id);
+		var id = randomGenerator();
 
 		swimlaneInteractor.addTicket(swimlane, id);
 		swimlaneInteractor.removeTicket(swimlane, id);
