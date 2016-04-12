@@ -1,6 +1,6 @@
 {
   "name": "scrumble",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Node powered, team based, Scrum board",
   "main": "app.js",
   "scripts": {
