@@ -19,8 +19,8 @@ describe("swimlaneStruct", function () {
 		expect(swimlane).to.have.property("title").which.is.a("string").and.is.empty;
 	});
 
-	it("should have a position property which should be an empty string ", function () {
-		expect(swimlane).to.have.property("position").which.is.a("string").and.is.empty;
+	it("should have a position property which should be an integer ", function () {
+		expect(swimlane).to.have.property("position").which.is.a("number");
 	});
 
 	it("should have a tickets property which should be an empty array", function () {

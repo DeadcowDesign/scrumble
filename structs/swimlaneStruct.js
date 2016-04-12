@@ -9,13 +9,13 @@
  * @since  1.0.0
  * @return {}
  */
-function ticketStruct () {
+function swimlaneStruct () {
 	this.id            = "";
 	this.title         = "";
-	this.position      = "";
+	this.position      = 0;
 	this.tickets       = [];
 
 	Object.seal(this);
 }
 
-module.exports = ticketStruct;
+module.exports = swimlaneStruct;

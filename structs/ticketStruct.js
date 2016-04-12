@@ -15,7 +15,8 @@ function ticketStruct () {
 	this.title       = "";
 	this.description = "";
 	this.notes       = "";
-
+	this.swimlane    = "";
+	
 	Object.seal(this);
 }
 
