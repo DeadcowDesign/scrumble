@@ -35,7 +35,7 @@ describe("checkType", function () {
 	it("should check wether an object is an instance of another", function () {
 		expect(checkType(testObject, "ticketStruct")).to.be.true;
 	});
-	
+
 	it("should return false if the subject does not match the test", function () {
 		expect(checkType(testStr, "number")).to.be.false;
 	});
