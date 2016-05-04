@@ -28,13 +28,22 @@ board.prototype = {
 			throw new Error("Parameter must be an instance of 'swimlane'");
 		}
 
-		if (!swimlane.id) {
-			throw new Error("Parameter property 'id' must not be empty");
+		if (!swimlane.id || !this.checkType(swimlane.id, "string")) {
+			throw new Error("Parameter property 'id' must be a non-empty string");
 		}
 
 		swimlane.position = Object.keys(this.swimlanes).length;
 
 		this.swimlanes[swimlane.id] = swimlane;
+
+		this._reorderSwimlanes();
+
+		return this;
+	},
+
+	removeSwimlane: function (swimlaneId) {
+
+		delete(this.swimlanes[swimlaneId]);
 
 		this._reorderSwimlanes();
 
