@@ -131,4 +131,21 @@ describe("swimlane", function () {
 
 		expect(testSwimlane.getTicket("jfilby")).to.be.undefined;
 	});
+
+	it("should move a ticket from one swimlane to another", function () {
+		var testSwimlaneOne = new swimlane();
+		var testSwimlaneTwo = new swimlane();
+
+		testTicket = new ticket();
+
+		testTicket.id = "jfilby";
+		testTicket.user = "jfilby";
+		testTicket.title = "TAMA-1234: Testing";
+
+		testSwimlaneOne.addTicket(testTicket);
+
+		testSwimlaneOne.moveTicket("jfilby", testSwimlaneTwo);
+
+		expect(testSwimlaneTwo.tickets).to.include.keys("jfilby");
+	});
 });

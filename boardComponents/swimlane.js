@@ -9,7 +9,7 @@
  * @since  1.2.0
  * @return {}
  */
-var checkType = require('../utilities/checkType');
+//var checkType = require('../utilities/checkType');
 /**
  * swimlaneStruct - define the swimlane's properties using it's constructor method
  * @return {[type]} [description]
@@ -31,7 +31,7 @@ swimlane.prototype = {
 
 	constructor: swimlane,
 
-	//checkType: require('../utilities/checkType'),
+	checkType: require('../utilities/checkType'),
 	/**
 	 * addTicket - add a ticket to the swimlane.
 	 * Tickets must be ticketStruct objects with a unique id.
@@ -41,7 +41,7 @@ swimlane.prototype = {
 	 */
 	addTicket: function (ticket) {
 
-		if (!checkType(ticket, "ticket")) {
+		if (!this.checkType(ticket, "ticket")) {
 			throw new Error("Parameter must be of type 'ticket'");
 		}
 
@@ -65,7 +65,7 @@ swimlane.prototype = {
 	removeTicket: function (ticketId) {
 
 
-		if (!checkType(ticketId, "string")) {
+		if (!this.checkType(ticketId, "string")) {
 
 			throw new Error("Parameter must be of type 'string'");
 		}
@@ -78,19 +78,19 @@ swimlane.prototype = {
 	/**
 	 * moveTicket - move a ticket 
 	 */
-	moveTicket: function (swimlaneTo, ticketId) {
+	moveTicket: function (ticketId, swimlaneTo) {
 
-		if (!checkType(swimlaneTo, "swimlane")) {
+		if (!this.checkType(swimlaneTo, "swimlane")) {
 			throw new Error("Second parameter 'swimlaneTo' must be of type 'swimlane'");
 		}
 
-		if (!checkType(ticketId, "string")) {
-			throw new Error("Third parameter 'targetId' must be of type 'string'");
+		if (!this.checkType(ticketId, "string")) {
+			throw new Error("First parameter 'ticketId' must be of type 'string'");
 		}
 
 		var targetTicket = this.getTicket(ticketId);
 
-		if (!checkType(targetTicket, "ticket")) {
+		if (!this.checkType(targetTicket, "ticket")) {
 			return undefined;
 		}
 
@@ -103,7 +103,7 @@ swimlane.prototype = {
 		}
 
 		try {
-			this.removeTicket(swimlaneFrom, targetTicket);
+			this.removeTicket(targetTicket.id);
 
 		} catch (err) {
 
@@ -119,7 +119,7 @@ swimlane.prototype = {
 	 */
 	getTicket: function (ticketId) {
 		
-		if (!checkType(ticketId, "string")) {
+		if (!this.checkType(ticketId, "string")) {
 			throw new Error ("Parameter must be a string");
 		}
 
