@@ -2,10 +2,10 @@ var chai = require("../../node_modules/chai");
 var assert = chai.assert;
 var expect = chai.expect;
 
-var boardStruct = require("../../structs/boardStruct");
+var boardStruct = require("../../boardComponents/board");
 var board = new boardStruct();
 
-describe("boardStruct", function () {
+describe("board", function () {
 
 	it("should have an id property which is an empty string", function () {
 

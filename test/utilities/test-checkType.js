@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 var checkType = require("../../utilities/checkType");
 
-var ticketStruct = require("../../structs/ticketStruct");
+var ticket = require("../../boardComponents/ticket");
 
 // Test data
 var testStr       = "I am a string";
@@ -18,7 +18,7 @@ var testObject    = {};
 var testNull      = null;
 var testBool      = true;
 var testUndefined = undefined;
-var testObject    = new ticketStruct();
+var testTicket    = new ticket();
 
 describe("checkType", function () {
 
@@ -33,7 +33,7 @@ describe("checkType", function () {
 	});
 
 	it("should check wether an object is an instance of another", function () {
-		expect(checkType(testObject, "ticketStruct")).to.be.true;
+		expect(checkType(testTicket, "ticket")).to.be.true;
 	});
 
 	it("should return false if the subject does not match the test", function () {

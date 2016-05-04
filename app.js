@@ -1,5 +1,7 @@
-var ticketStruct = require("./structs/ticketStruct");
+var swimlane = require("./boardComponents/swimlane");
 
-var ticket = new ticketStruct();
+var testSwimlane = new swimlane();
 
-ticket.id = "testing";
+testSwimlane.id = "testing";
+
+console.log(testSwimlane);
