@@ -1,6 +1,6 @@
 {
   "name": "scrumble",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Node powered, team based, Scrum board",
   "main": "app.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "chai": "^3.5.0",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
   }
 }
