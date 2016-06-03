@@ -47,6 +47,22 @@ board.prototype = {
 		return this;
 	},
 
+	getSwimlane: function (swimlaneId) {
+
+		if (!this.checkType(swimlaneId, "string")) {
+			throw new Error("Argument must be a non-empty string");
+		}
+
+		for (var i = 0; i < this.swimlanes.length; i++) {
+
+			if (this.swimlanes[i].id === swimlaneId) {
+				
+				return this.swimlanes[i];
+			}
+		}
+
+		return undefined;
+	}
 	/**
 	 * removeSwimlane - remove a swimlane from the boads
 	 * swimlane's pool

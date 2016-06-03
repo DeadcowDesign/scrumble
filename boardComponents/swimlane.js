@@ -49,7 +49,7 @@ swimlane.prototype = {
 			throw new Error("Parameter 'ticket' must have property 'id' set");
 		}
 
-		this.tickets[ticket.id] = ticket;
+		this.tickets.push(ticket);
 
 		return true;
 	},
@@ -70,7 +70,11 @@ swimlane.prototype = {
 			throw new Error("Parameter must be of type 'string'");
 		}
 
-		delete this.tickets[ticketId];
+		for (var i = 0; i < this.tickets.length; i++) {
+			if (this.tickets[i].id === ticketId) {
+				this.tickets.splice(i,1);
+			}
+		}
 
 		return true;
 	},
@@ -123,7 +127,13 @@ swimlane.prototype = {
 			throw new Error ("Parameter must be a string");
 		}
 
-		return this.tickets[ticketId];
+		for (var i = 0; i < this.tickets.length; i++) {
+			if (this.tickets[i].id === ticketId) {
+				return this.tickets[i];
+			}
+		}
+
+		return undefined;
 	}
 };
 

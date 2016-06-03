@@ -10,23 +10,33 @@ var tag = require('./utilities/tagBuilder');
 
 var swimlane = new swimlaneComponent();
 
-for(var i = 0; i < 10; i++) {
-	var ticket = new ticketComponent();
+var board = new boardComponent();
 
-	ticket.id = randomString();
-	ticket.title = "test";
-	ticket.description = "test";
+for (var j = 0; j < 5; j++) {
+    var swimlane = new swimlaneComponent();
+    swimlane.id = "testSwimlane" + j;
 
-	swimlane.addTicket(ticket);
+    for (var i = 0; i < 10; i++) {
+    	var ticket = new ticketComponent();
+
+    	ticket.id = "testing" + i;
+        ticket.user = "jfilby";
+    	ticket.title = "test";
+    	ticket.description = "test";
+
+    	swimlane.addTicket(ticket);
+    }
+    board.addSwimlane(swimlane);
 }
 
+console.log(board);
+var swimlane = board.swimlanes[0];
 console.log(swimlane);
-
 app.get('/', function (req, res) {
 
 	res.send(JSON.stringify(swimlane));
 });
 
-app.listen(3000, function () {
+/*app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
-});
+});*/

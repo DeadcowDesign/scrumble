@@ -37,7 +37,7 @@ describe("swimlane", function () {
 
 		testSwimlane = new swimlane();
 
-		for (var i = 0; i < 50; i++) {
+		for (var i = 0; i < 4; i++) {
 
 			var testTicket = new ticket();
 
@@ -47,7 +47,10 @@ describe("swimlane", function () {
 
 		}
 
-		expect(testSwimlane.tickets).to.include.keys("TAMA-0", "TAMA-1", "TAMA-2", "TAMA-3");
+		expect(testSwimlane.tickets[0].id).equal("TAMA-0");
+		expect(testSwimlane.tickets[1].id).equal("TAMA-1");
+		expect(testSwimlane.tickets[2].id).equal("TAMA-2");
+		expect(testSwimlane.tickets[3].id).equal("TAMA-3");
 	});
 
 	it("should reject an invalid ticket parameter when adding a ticket", function () {
@@ -146,6 +149,8 @@ describe("swimlane", function () {
 
 		testSwimlaneOne.moveTicket("jfilby", testSwimlaneTwo);
 
-		expect(testSwimlaneTwo.tickets).to.include.keys("jfilby");
+		var movedTicket = testSwimlaneTwo.getTicket("jfilby");
+
+		assert.strictEqual(movedTicket, testTicket);
 	});
 });

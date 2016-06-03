@@ -155,4 +155,22 @@ describe("board", function () {
 		expect( testBoard.swimlanes[1].id).to.equal("two");
 		expect( testBoard.swimlanes[2].id).to.equal("zero");
 	});
+
+	it("Should return a swimlane from it's swimlanes pool based upon it's id", function () {
+		testBoard = new board();
+
+		var swimlaneOne   = new swimlane();
+		var swimlaneTwo   = new swimlane();
+		var swimlaneThree = new swimlane();
+
+		swimlaneOne.id   = "jfilby";
+		swimlaneTwo.id   = "mtrinder";
+		swimlaneThree.id = "jdeffries";
+
+		testBoard.addSwimlane(swimlaneOne);
+		testBoard.addSwimlane(swimlaneTwo);
+		testBoard.addSwimlane(swimlaneThree);
+
+		assert.strictEqual(testBoard.getSwimlane("mtrinder"), swimlaneTwo);
+	});
 });
